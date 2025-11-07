@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./post.css');
 @import url('./toc.css');
 
 @layer base {
