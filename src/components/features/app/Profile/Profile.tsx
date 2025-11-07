@@ -10,12 +10,12 @@ export const Profile = () => (
         alt="avatar"
         src="/assets/author.png"
       />
-      <h1 className="text-2xl font-semibold text-primary-1">Next.js</h1>
+      <h1 className="text-2xl font-semibold text-primary-1">ZAGARO</h1>
     </div>
 
     <p className="text-primary-1">
-      Modern JavaScript Framework: hybrid static & server rendering, TypeScript
-      support, smart bundling, route pre-fetching...
+      ZAGARO（ザガロ）は、静岡県立大学の学生を中心としたテック・エンジニアリングサークルです。
+      エンジニアリングやAI・Web開発に関心のある学生が集まり、学び・交流・発信を通じて互いに成長することを目指しています。
     </p>
 
     <div className="flex gap-4">
