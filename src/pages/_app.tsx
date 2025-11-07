@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import 'zenn-content-css';
 import '@/styles/index.css';
 import { Footer } from '@/components/features/app/Footer';
 import { Header } from '@/components/features/app/Header';
