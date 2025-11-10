@@ -1,4 +1,5 @@
-import { SiGithub, SiTwitter } from 'react-icons/si';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiGithub } from 'react-icons/si';
 
 export const sns = [
   {
@@ -8,7 +9,7 @@ export const sns = [
   },
   {
     href: 'https://x.com/zagaro_eng',
-    icon: <SiTwitter size={20} />,
+    icon: <FaXTwitter size={20} />,
     label: 'X',
   },
 ];
