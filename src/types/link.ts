@@ -4,4 +4,5 @@ export type LinkType = {
   name: string;
   href: string;
   icon?: React.ReactElement;
+  isExternal?: boolean;
 };

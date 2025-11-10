@@ -18,5 +18,6 @@ export const links: LinkType[] = [
     name: 'ZAGARO-HP',
     href: 'https://uos-zagaro-eng.github.io/zagaro-hp/',
     icon: <GoHome />,
+    isExternal: true,
   },
 ];

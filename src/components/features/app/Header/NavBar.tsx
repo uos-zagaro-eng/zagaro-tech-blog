@@ -4,8 +4,7 @@ import { links } from '@/config/links';
 export const NavBar = () => {
   return (
     <>
-      {links.map(({ name, href }) => {
-        const isExternal = href.startsWith('http');
+      {links.map(({ name, href, isExternal }) => {
         const className =
           'px-5 py-2 text-primary-1 capitalize select-none cursor-pointer';
 
