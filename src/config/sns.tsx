@@ -1,19 +1,15 @@
-import { SiGithub, SiTwitter, SiZenn } from 'react-icons/si';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiGithub } from 'react-icons/si';
 
 export const sns = [
   {
-    href: 'https://zenn.dev',
-    icon: <SiZenn size={20} />,
-    label: 'Zenn',
-  },
-  {
-    href: 'https://github.com',
+    href: 'https://github.com/uos-zagaro-eng',
     icon: <SiGithub size={20} />,
     label: 'Github',
   },
   {
-    href: 'https://twitter.com',
-    icon: <SiTwitter size={20} />,
-    label: 'Twitter',
+    href: 'https://x.com/zagaro_eng',
+    icon: <FaXTwitter size={20} />,
+    label: 'X',
   },
 ];
