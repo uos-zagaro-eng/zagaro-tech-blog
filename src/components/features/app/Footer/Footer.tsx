@@ -1,6 +1,5 @@
 import { Link } from '@/components/common/Link';
 import { ContentLayout } from '@/components/features/app/Layout';
-import { SITE_NAME } from '@/config/app';
 import { sns } from '@/config/sns';
 
 export const Footer = () => {
@@ -21,7 +20,7 @@ export const Footer = () => {
             ))}
           </div>
           <div className="text-neutral-200 text-sm text-center">
-            &copy; 2022 - {SITE_NAME}
+            &copy; 2025 - ZAGARO
           </div>
         </div>
       </ContentLayout>
