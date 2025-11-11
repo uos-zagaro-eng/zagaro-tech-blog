@@ -33,6 +33,47 @@
   .badge {
     @apply select-none text-xs flex items-center font-bold px-3 py-1 bg-black text-white;
   }
+
+  /* Zenn content dark mode overrides */
+  .znc[data-theme='dark-blue'] code:not(pre > code) {
+    @apply text-white bg-gray-600;
+  }
+
+  /* GFM table styles */
+  .znc table {
+    @apply w-full my-4 border-collapse;
+  }
+
+  .znc th,
+  .znc td {
+    @apply border border-gray-300 px-4 py-2 text-left;
+  }
+
+  .znc thead {
+    @apply bg-gray-100;
+  }
+
+  /* Dark mode table styles */
+  .znc[data-theme='dark-blue'] th {
+    @apply bg-zinc-900 text-white border-gray-300;
+  }
+
+  .znc[data-theme='dark-blue'] td {
+    @apply bg-inherit text-white border-gray-300;
+  }
+
+  .znc[data-theme='dark-blue'] thead {
+    @apply bg-gray-700;
+  }
+
+  /* GFM blockquote styles */
+  .znc blockquote {
+    @apply border-l-4 border-gray-300 bg-gray-50 p-4 my-4;
+  }
+
+  .znc[data-theme='dark-blue'] blockquote {
+    @apply border-gray-600 bg-gray-800 text-white;
+  }
 }
 
 @layer utilities {

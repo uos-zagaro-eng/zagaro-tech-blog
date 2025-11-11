@@ -1,12 +1,19 @@
-import React from 'react';
-import { FiSun } from 'react-icons/fi';
+import { useTheme } from 'next-themes';
+import React, { useEffect, useState } from 'react';
+import { FiSun, FiMoon } from 'react-icons/fi';
 import { Link } from '@/components/common/Link';
 import { ContentLayout } from '@/components/features/app/Layout';
-import { useDarkMode } from '@/hooks/useDarkMode';
 import { NavBar } from './NavBar';
 
 export const Header = () => {
-  const { toggle } = useDarkMode();
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <ContentLayout className="sticky top-0 z-10 py-3 bg-primary-1 shadow-sm">
@@ -26,9 +33,9 @@ export const Header = () => {
             type="button"
             className="icon-btn"
             aria-label="toggle theme"
-            onClick={() => toggle()}
+            onClick={toggleTheme}
           >
-            <FiSun />
+            {mounted && (theme === 'dark' ? <FiSun /> : <FiMoon />)}
           </button>
         </div>
       </nav>
