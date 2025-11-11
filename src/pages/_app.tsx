@@ -1,5 +1,7 @@
+import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import 'zenn-content-css';
+import 'prism-themes/themes/prism-one-dark.css';
 import '@/styles/index.css';
 import { Footer } from '@/components/features/app/Footer';
 import { Header } from '@/components/features/app/Header';
@@ -8,7 +10,7 @@ import { Seo } from '@/components/features/app/Seo';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider attribute="class">
       <Seo />
 
       <div
@@ -21,6 +23,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </ContentLayout>
         <Footer />
       </div>
-    </>
+    </ThemeProvider>
   );
 }

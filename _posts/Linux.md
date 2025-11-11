@@ -1,6 +1,6 @@
 ---
 title: 'プログラミング2024 テスト解説'
-excerpt: 'まぁ、概要だよね'
+excerpt: 'プログラミング2024のテスト解説です'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2025-11-07'
 ogImage:

@@ -61,6 +61,7 @@
     "zustand": "^4.0.0-rc.1"
   },
   "dependencies": {
+    "next-themes": "0.3.0",
     "zenn-content-css": "^0.2.10",
     "zenn-embed-elements": "^0.2.10",
     "zenn-markdown-html": "^0.2.10"
