@@ -4,7 +4,12 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="ja">
-        <Head />
+        <Head>
+          <script
+            src="https://embed.zenn.studio/js/listen-embed-event.js"
+            async
+          ></script>
+        </Head>
         <body>
           <Main />
           <NextScript />
