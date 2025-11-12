@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @import url('./toc.css');
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 @layer base {
-  /* body {
+  body {
     background-color: var(--colors-loContrast);
-    font-family: Yu Gothic, yugothic, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN,
-      メイリオ, meiryo, sans-serif;
-  } */
+    font-family: 'Noto Sans JP', メイリオ, meiryo, Yu Gothic, yugothic,
+      ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, sans-serif;
+  }
 }
 
 @layer components {
@@ -72,12 +73,18 @@
   }
 
   .znc[data-theme='dark-blue'] blockquote {
-    @apply border-gray-600 bg-gray-800 text-white;
+    @apply border-gray-600 bg-gray-900 text-white;
   }
 
   .znc pre {
     padding-top: 0rem !important;
     padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+    @apply bg-gray-900;
+  }
+
+  .znc[data-theme='dark-blue'] pre {
+    @apply bg-gray-900;
   }
 
   .copy-button {
