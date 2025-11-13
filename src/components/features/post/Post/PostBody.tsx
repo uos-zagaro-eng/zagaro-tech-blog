@@ -17,6 +17,34 @@ export const PostBody = ({ content }: Props) => {
     setIsMounted(true);
   }, []);
 
+  useEffect(() => {
+    const preElements = document.querySelectorAll('.znc pre');
+    preElements.forEach((pre) => {
+      const code = pre.querySelector('code');
+      if (!code) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.style.position = 'relative';
+
+      const button = document.createElement('button');
+      button.textContent = 'Copy';
+      button.className = 'copy-button';
+
+      button.addEventListener('click', () => {
+        navigator.clipboard.writeText(code.innerText).then(() => {
+          button.textContent = 'Copied!';
+          setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 2000);
+        });
+      });
+
+      pre.parentNode?.insertBefore(wrapper, pre);
+      wrapper.appendChild(pre);
+      wrapper.appendChild(button);
+    });
+  }, [content]);
+
   return (
     <div
       className="post text-primary-1 znc"

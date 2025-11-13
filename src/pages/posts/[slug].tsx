@@ -1,6 +1,6 @@
+import markdownToHtml from 'zenn-markdown-html';
 import { Posts } from '@/components/pages/posts';
 import { getPostBySlug, getAllPosts } from '@/lib/api';
-import markdownToHtml from '@/lib/markdownToHtml';
 
 type Props = React.ComponentPropsWithoutRef<typeof Posts>;
 
@@ -26,7 +26,9 @@ export async function getStaticProps({ params }: Params) {
     'excerpt',
     'tags',
   ]);
-  const content = await markdownToHtml(post.content || '');
+  const content = await markdownToHtml(post.content || '', {
+    embedOrigin: 'https://embed.zenn.studio',
+  });
 
   return {
     props: {
