@@ -90,6 +90,30 @@
     @apply bg-gray-900;
   }
 
+  /* 共通 */
+  .znc[data-theme='dark-blue'] aside.msg {
+    @apply bg-amber-900 text-white;
+  }
+
+  /* alert */
+  .znc[data-theme='dark-blue'] aside.msg.alert {
+    @apply bg-red-900 text-red-100;
+  }
+
+  .znc[data-theme='dark-blue'] details {
+    @apply border-zinc-700 text-zinc-100 overflow-hidden;
+  }
+
+  /* summary タイトル部分 */
+  .znc[data-theme='dark-blue'] details summary {
+    @apply bg-gray-900 text-white;
+  }
+
+  /* details 内の表示部分（summary 以外） */
+  .znc[data-theme='dark-blue'] details > *:not(summary) {
+    @apply bg-gray-900 text-white;
+  }
+
   .copy-button {
     position: absolute;
     top: 0.5rem;
