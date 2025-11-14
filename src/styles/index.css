@@ -1,14 +1,17 @@
+@import url('./toc.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./toc.css');
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 @layer base {
   body {
     background-color: var(--colors-loContrast);
-    font-family: 'Noto Sans JP', メイリオ, meiryo, Yu Gothic, yugothic,
-      ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, sans-serif;
+    font-family: 'Noto Sans JP', メイリオ, meiryo, ヒラギノ角ゴ ProN,
+      Hiragino Kaku Gothic ProN, Yu Gothic, yugothic, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: auto;
+    font-style: normal;
   }
 }
 
