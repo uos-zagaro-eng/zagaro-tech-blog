@@ -1,8 +1,8 @@
+import 'zenn-content-css';
+import '@/styles/index.css';
+import 'prism-themes/themes/prism-one-dark.css';
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
-import 'zenn-content-css';
-import 'prism-themes/themes/prism-one-dark.css';
-import '@/styles/index.css';
 import { Footer } from '@/components/features/app/Footer';
 import { Header } from '@/components/features/app/Header';
 import { ContentLayout } from '@/components/features/app/Layout';
