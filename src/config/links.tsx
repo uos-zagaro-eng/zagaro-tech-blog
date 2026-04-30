@@ -1,9 +1,15 @@
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { FiTag } from 'react-icons/fi';
 import { GoHome } from 'react-icons/go';
+import { MdOutlineArticle } from 'react-icons/md';
 import { LinkType } from '@/types/link';
 
 export const links: LinkType[] = [
+  {
+    name: 'Articles',
+    href: '/',
+    icon: <MdOutlineArticle />,
+  },
   {
     name: 'tags',
     href: '/tags',
