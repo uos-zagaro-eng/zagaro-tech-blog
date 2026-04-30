@@ -13,7 +13,7 @@ const View = () => (
       The page you’re looking for doesn’t exist.
     </p>
 
-    <Link href="/" passHref>
+    <Link href="/" passHref legacyBehavior>
       <a className="px-10 button">Go home</a>
     </Link>
   </div>

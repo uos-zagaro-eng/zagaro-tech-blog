@@ -22,7 +22,7 @@ export const NavBar = () => {
           );
         }
         return (
-          <Link key={name} href={href} passHref>
+          <Link key={name} href={href} passHref legacyBehavior>
             <a className={className}>{name}</a>
           </Link>
         );
