@@ -1,4 +1,4 @@
-import 'zenn-content-css';
+import '@/styles/zenn-content-custom.css';
 import '@/styles/index.css';
 import 'prism-themes/themes/prism-one-dark.css';
 import { ThemeProvider } from 'next-themes';
