@@ -35,83 +35,20 @@
     @apply text-primary-1 p-3;
   }
   .badge {
-    @apply select-none text-xs flex items-center font-bold px-3 py-1 bg-black text-white;
-  }
-
-  /* Zenn content dark mode overrides */
-  .znc[data-theme='dark-blue'] code:not(pre > code) {
-    @apply text-white bg-gray-600;
-  }
-
-  /* GFM table styles */
-  .znc table {
-    @apply w-full my-4 border-collapse;
-  }
-
-  .znc th,
-  .znc td {
-    @apply border border-gray-300 px-4 py-2 text-left;
-  }
-
-  .znc thead {
-    @apply bg-gray-100;
-  }
-
-  /* Dark mode table styles */
-  .znc[data-theme='dark-blue'] th {
-    @apply bg-zinc-900 text-white border-gray-300;
-  }
-
-  .znc[data-theme='dark-blue'] td {
-    @apply bg-inherit text-white border-gray-300;
-  }
-
-  .znc[data-theme='dark-blue'] thead {
-    @apply bg-gray-700;
-  }
-
-  /* GFM blockquote styles */
-  .znc blockquote {
-    @apply border-l-4 border-gray-300 bg-gray-50 p-4 my-4;
-  }
-
-  .znc[data-theme='dark-blue'] blockquote {
-    @apply border-gray-600 bg-gray-900 text-white;
-  }
-
-  .znc pre {
-    padding-top: 0rem !important;
-    padding-bottom: 0rem !important;
-    padding-left: 0rem !important;
-    @apply bg-gray-900;
-  }
-
-  .znc[data-theme='dark-blue'] pre {
-    @apply bg-gray-900;
-  }
-
-  /* 共通 */
-  .znc[data-theme='dark-blue'] aside.msg {
-    @apply bg-amber-900 text-white;
-  }
-
-  /* alert */
-  .znc[data-theme='dark-blue'] aside.msg.alert {
-    @apply bg-red-900 text-red-100;
-  }
-
-  .znc[data-theme='dark-blue'] details {
-    @apply border-zinc-700 text-zinc-100 overflow-hidden;
-  }
-
-  /* summary タイトル部分 */
-  .znc[data-theme='dark-blue'] details summary {
-    @apply bg-gray-900 text-white;
-  }
-
-  /* details 内の表示部分（summary 以外） */
-  .znc[data-theme='dark-blue'] details > *:not(summary) {
-    @apply bg-gray-900 text-white;
+    @apply inline-flex items-center
+      select-none
+      px-3 py-1
+      rounded-full
+      text-xs sm:text-sm font-semibold
+      border border-teal-200
+      bg-teal-50/70 text-teal-900
+      backdrop-blur-sm
+      transition-all duration-200
+      hover:scale-105 hover:bg-teal-100 hover:border-teal-300 hover:shadow-sm
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2
+      dark:border-teal-700 dark:bg-teal-900/30 dark:text-teal-100
+      dark:hover:bg-teal-900/50 dark:hover:border-teal-600
+      dark:focus-visible:ring-teal-400 dark:focus-visible:ring-offset-neutral-900;
   }
 
   .copy-button {

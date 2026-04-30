@@ -18,6 +18,14 @@ export const PostBody = ({ content }: Props) => {
   }, []);
 
   useEffect(() => {
+    if (!theme) return;
+    document.documentElement.setAttribute(
+      'data-theme',
+      theme === 'dark' ? 'dark' : 'light',
+    );
+  }, [theme]);
+
+  useEffect(() => {
     const preElements = document.querySelectorAll('.znc pre');
     preElements.forEach((pre) => {
       const code = pre.querySelector('code');
@@ -48,7 +56,7 @@ export const PostBody = ({ content }: Props) => {
   return (
     <div
       className="post text-primary-1 znc"
-      data-theme={isMounted ? (theme === 'dark' ? 'dark-blue' : 'light') : undefined}
+      data-theme={isMounted ? (theme === 'dark' ? 'dark' : 'light') : undefined}
     >
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>

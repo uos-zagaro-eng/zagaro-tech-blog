@@ -38,7 +38,7 @@ export const Cell: React.VFC<Props> = ({ cell, page, count }) => {
       return <StyledCell variant="ellipsis">{cell}</StyledCell>;
     default:
       return (
-        <Link href={`/posts/page/${cell}`} passHref>
+        <Link href={`/posts/page/${cell}`} passHref legacyBehavior>
           <a>
             <StyledCell active={cell === page}>{cell}</StyledCell>
           </a>

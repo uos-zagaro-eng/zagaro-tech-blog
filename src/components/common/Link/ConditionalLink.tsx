@@ -11,7 +11,7 @@ export const ConditionalLink = React.forwardRef<
 >(({ children, href, condition, ...props }, forwardedRef) => (
   <>
     {condition ? (
-      <Link href={href} passHref {...props} ref={forwardedRef}>
+      <Link href={href} passHref legacyBehavior {...props} ref={forwardedRef}>
         <a>{children}</a>
       </Link>
     ) : (

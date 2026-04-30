@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Portal } from '@radix-ui/react-portal';
 import { useBreakPoint } from '@/hooks/useBreakPoint';
 import { cn } from '@/lib/cn';
@@ -17,6 +18,11 @@ export const MainLayout: React.VFC<Props> = ({
   className,
 }) => {
   const lg = useBreakPoint('lg');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className={cn(className, 'grid grid-cols-1 lg:grid-cols-3 gap-10')}>
@@ -24,7 +30,7 @@ export const MainLayout: React.VFC<Props> = ({
         <main>{main}</main>
       </div>
       <aside>{aside}</aside>
-      {lg || (
+      {mounted && !lg && (
         <Portal>
           <div className="z-50 fixed left-8 bottom-8">
             <Hamburger>{hamburgerMenu}</Hamburger>
