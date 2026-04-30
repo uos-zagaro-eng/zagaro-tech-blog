@@ -1,14 +1,14 @@
 import {
-  FacebookIcon,
-  FacebookShareButton,
-  PinterestIcon,
-  PinterestShareButton,
+  ThreadsIcon,
+  ThreadsShareButton,
   LineIcon,
   LineShareButton,
   HatenaIcon,
   HatenaShareButton,
-  TwitterIcon,
-  TwitterShareButton,
+  XShareButton,
+  XIcon,
+  BlueskyShareButton,
+  BlueskyIcon,
 } from 'react-share';
 import { MdShare } from 'react-icons/md';
 import { ROOT_URL, SITE_NAME } from '@/config/app';
@@ -21,7 +21,7 @@ type Props = {
 const SIZE = 40;
 
 export const Share: React.VFC<Props> = ({ post }) => {
-  const { title, slug, ogImage } = post;
+  const { title, slug } = post;
 
   const url = `${ROOT_URL}/posts/${slug}`;
   const config = { title, url };
@@ -36,27 +36,27 @@ export const Share: React.VFC<Props> = ({ post }) => {
       </div>
 
       <div className="w-full center gap-4">
-        <PinterestShareButton {...config} media={ogImage.url}>
-          <PinterestIcon size={SIZE} round />
-        </PinterestShareButton>
-        <TwitterShareButton
+        <LineShareButton {...config}>
+          <LineIcon size={SIZE} round />
+        </LineShareButton>
+        <XShareButton
           title={title}
           url={url}
           via={SITE_NAME}
           related={[SITE_NAME, 'Next.js']}
           hashtags={tags}
         >
-          <TwitterIcon size={SIZE} round />
-        </TwitterShareButton>
-        <FacebookShareButton {...config}>
-          <FacebookIcon size={SIZE} round />
-        </FacebookShareButton>
-        <LineShareButton {...config}>
-          <LineIcon size={SIZE} round />
-        </LineShareButton>
+          <XIcon size={SIZE} round />
+        </XShareButton>
         <HatenaShareButton {...config}>
           <HatenaIcon size={SIZE} round />
         </HatenaShareButton>
+        <ThreadsShareButton {...config}>
+          <ThreadsIcon size={SIZE} round />
+        </ThreadsShareButton>
+        <BlueskyShareButton {...config}>
+          <BlueskyIcon size={SIZE} round />
+        </BlueskyShareButton>
       </div>
     </div>
   );
