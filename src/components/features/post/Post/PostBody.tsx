@@ -48,7 +48,7 @@ export const PostBody = ({ content }: Props) => {
   return (
     <div
       className="post text-primary-1 znc"
-      data-theme={isMounted ? (theme === 'dark' ? 'dark-blue' : 'light') : undefined}
+      data-theme={isMounted ? (theme === 'dark' ? 'dark' : 'light') : undefined}
     >
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>

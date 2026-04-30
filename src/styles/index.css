@@ -1,4 +1,5 @@
 @import url('./toc.css');
+@import url('./dark-theme.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
@@ -51,11 +52,6 @@
       dark:focus-visible:ring-teal-400 dark:focus-visible:ring-offset-neutral-900;
   }
 
-  /* Zenn content dark mode overrides */
-  .znc[data-theme='dark-blue'] code:not(pre > code) {
-    @apply text-white bg-gray-600;
-  }
-
   /* GFM table styles */
   .znc table {
     @apply w-full my-4 border-collapse;
@@ -70,26 +66,9 @@
     @apply bg-gray-100;
   }
 
-  /* Dark mode table styles */
-  .znc[data-theme='dark-blue'] th {
-    @apply bg-zinc-900 text-white border-gray-300;
-  }
-
-  .znc[data-theme='dark-blue'] td {
-    @apply bg-inherit text-white border-gray-300;
-  }
-
-  .znc[data-theme='dark-blue'] thead {
-    @apply bg-gray-700;
-  }
-
   /* GFM blockquote styles */
   .znc blockquote {
     @apply border-l-4 border-gray-300 bg-gray-50 p-4 my-4;
-  }
-
-  .znc[data-theme='dark-blue'] blockquote {
-    @apply border-gray-600 bg-gray-900 text-white;
   }
 
   .znc pre {
@@ -97,34 +76,6 @@
     padding-bottom: 0rem !important;
     padding-left: 0rem !important;
     @apply bg-gray-900;
-  }
-
-  .znc[data-theme='dark-blue'] pre {
-    @apply bg-gray-900;
-  }
-
-  /* 共通 */
-  .znc[data-theme='dark-blue'] aside.msg {
-    @apply bg-amber-900 text-white;
-  }
-
-  /* alert */
-  .znc[data-theme='dark-blue'] aside.msg.alert {
-    @apply bg-red-900 text-red-100;
-  }
-
-  .znc[data-theme='dark-blue'] details {
-    @apply border-zinc-700 text-zinc-100 overflow-hidden;
-  }
-
-  /* summary タイトル部分 */
-  .znc[data-theme='dark-blue'] details summary {
-    @apply bg-gray-900 text-white;
-  }
-
-  /* details 内の表示部分（summary 以外） */
-  .znc[data-theme='dark-blue'] details > *:not(summary) {
-    @apply bg-gray-900 text-white;
   }
 
   .copy-button {
