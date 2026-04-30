@@ -714,3 +714,20 @@
   --c-blue-1000: #205851;
   --c-text-link: var(--c-blue-500);
 }
+
+/* Project custom dark component overrides */
+[data-theme^='dark'] .znc .zenn-embedded-card iframe,
+[data-theme^='dark'] .znc .zenn-embedded-link-card iframe {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  filter: saturate(0.25) brightness(0.9) contrast(0.9);
+}
+
+[data-theme^='dark'] .znc .zenn-embedded-github iframe,
+[data-theme^='dark'] .znc .zenn-embedded-gist iframe {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  filter: saturate(0.3) brightness(1) contrast(1);
+}
