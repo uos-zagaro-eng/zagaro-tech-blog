@@ -18,6 +18,14 @@ export const PostBody = ({ content }: Props) => {
   }, []);
 
   useEffect(() => {
+    if (!theme) return;
+    document.documentElement.setAttribute(
+      'data-theme',
+      theme === 'dark' ? 'dark' : 'light',
+    );
+  }, [theme]);
+
+  useEffect(() => {
     const preElements = document.querySelectorAll('.znc pre');
     preElements.forEach((pre) => {
       const code = pre.querySelector('code');
