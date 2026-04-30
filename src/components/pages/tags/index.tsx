@@ -1,6 +1,5 @@
 import { AiTwotoneTags } from 'react-icons/ai';
 import { Link } from '@/components/common/Link';
-import { TagBadge } from '@/components/common/TagBadge';
 import { MainLayout } from '@/components/features/app/Layout';
 import { Profile } from '@/components/features/app/Profile';
 
@@ -22,8 +21,8 @@ export const Tags: React.VFC<Props> = ({ tags }) => {
 
           <div className="wrap gap-3">
             {tags.map((tag) => (
-              <Link key={tag} href={`/tags/${tag}`} passHref legacyBehavior>
-                <TagBadge>{tag}</TagBadge>
+              <Link key={tag} href={`/tags/${tag}`} className="badge">
+                {tag}
               </Link>
             ))}
           </div>
