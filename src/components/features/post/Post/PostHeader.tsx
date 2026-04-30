@@ -2,6 +2,7 @@ import { AiTwotoneTags } from 'react-icons/ai';
 import { Date } from '@/components/common/Date';
 import { Image } from '@/components/common/Image';
 import { Link } from '@/components/common/Link';
+import { TagBadge } from '@/components/common/TagBadge';
 
 type Props = {
   title: string;
@@ -31,7 +32,7 @@ export const PostHeader = ({ title, coverImage, date, tags }: Props) => {
           </span>
           {tags.map((tag) => (
             <Link key={tag} href={`/tags/${tag}`} passHref legacyBehavior>
-              <a className="badge">{tag}</a>
+              <TagBadge>{tag}</TagBadge>
             </Link>
           ))}
         </div>
