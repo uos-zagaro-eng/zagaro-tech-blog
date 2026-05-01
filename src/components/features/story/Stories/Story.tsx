@@ -14,7 +14,7 @@ export const Story = ({ title, coverImage, date, excerpt, slug }: Props) => {
   return (
     <Link href={`/posts/${slug}`} legacyBehavior>
       <a className="select-none w-full h-full vstack gap-3 cursor-pointer focus:outline-2">
-        <div className="w-full aspect-[16/9] bg-neutral-50 overflow-hidden">
+        <div className="w-full aspect-[2/1] bg-neutral-50 overflow-hidden">
           <Image
             src={coverImage}
             alt={`Cover Image for ${title}`}
