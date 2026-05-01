@@ -30,6 +30,8 @@ yarn
 yarn dev
 ```
 
+Main site settings are managed in `src/config/app.ts` (`APP_BASE_PATH`, `ROOT_URL`, `SITE_NAME`).
+
 ## Deployment
 
 Refer to this article for deployment instructions:

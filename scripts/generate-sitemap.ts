@@ -1,32 +1,30 @@
-const fs = require('fs');
-const path = require('path');
-const { loadEnvConfig } = require('@next/env');
-const matter = require('gray-matter');
-
-loadEnvConfig(process.cwd());
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
+import { ROOT_URL } from '../src/config/app';
 
 const POSTS_DIR = path.resolve(process.cwd(), '_posts');
 const PUBLIC_DIR = path.resolve(process.cwd(), 'public');
 const SITEMAP_PATH = path.join(PUBLIC_DIR, 'sitemap.xml');
 const PAGINATION_OFFSET = 8;
 
-const rootUrl = (
-  process.env.NEXT_PUBLIC_ROOT_URL ||
-  process.env.ROOT_URL ||
-  'http://localhost:3000'
-).replace(/\/+$/, '');
+const rootUrl = ROOT_URL.replace(/\/+$/, '');
 
-const toUrl = (routePath) => `${rootUrl}${routePath}`;
+const toUrl = (routePath: string) => `${rootUrl}${routePath}`;
 
-const withTrailingSlash = (routePath) => {
+const withTrailingSlash = (routePath: string) => {
   if (routePath === '/') return '/';
   return routePath.endsWith('/') ? routePath : `${routePath}/`;
 };
 
-const readPosts = () => {
-  const filenames = fs
-    .readdirSync(POSTS_DIR)
-    .filter((name) => name.endsWith('.md'));
+type PostMeta = {
+  slug: string;
+  tags: string[];
+  lastModified: string;
+};
+
+const readPosts = (): PostMeta[] => {
+  const filenames = fs.readdirSync(POSTS_DIR).filter((name) => name.endsWith('.md'));
 
   return filenames.map((filename) => {
     const slug = filename.replace(/\.md$/, '');
@@ -43,7 +41,7 @@ const readPosts = () => {
   });
 };
 
-const escapeXml = (value) =>
+const escapeXml = (value: string) =>
   value
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -51,7 +49,7 @@ const escapeXml = (value) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
 
-const buildSitemapXml = (entries) => {
+const buildSitemapXml = (entries: Array<{ loc: string; lastmod: string }>) => {
   const urls = entries
     .map(
       ({ loc, lastmod }) => `  <url>
@@ -70,7 +68,9 @@ ${urls}
 
 const main = () => {
   const posts = readPosts();
-  const tags = [...new Set(posts.flatMap((post) => post.tags))].sort();
+  const tags = Array.from(
+    new Set(posts.reduce<string[]>((acc, post) => acc.concat(post.tags), [])),
+  ).sort();
   const maxPage = Math.max(1, Math.ceil(posts.length / PAGINATION_OFFSET));
 
   const staticRoutes = ['/', '/about', '/tags'];
@@ -78,23 +78,14 @@ const main = () => {
     { length: maxPage },
     (_, idx) => `/posts/page/${idx + 1}`,
   );
-  const postRoutes = posts.map(
-    (post) => `/posts/${encodeURIComponent(post.slug)}`,
-  );
+  const postRoutes = posts.map((post) => `/posts/${encodeURIComponent(post.slug)}`);
   const tagRoutes = tags.map((tag) => `/tags/${encodeURIComponent(tag)}`);
 
   const now = new Date().toISOString();
-  const postLastmodMap = new Map(
-    posts.map((post) => [post.slug, post.lastModified]),
-  );
+  const postLastmodMap = new Map(posts.map((post) => [post.slug, post.lastModified]));
 
-  const allRoutes = [
-    ...staticRoutes,
-    ...pageRoutes,
-    ...postRoutes,
-    ...tagRoutes,
-  ];
-  const uniqueRoutes = [...new Set(allRoutes.map(withTrailingSlash))];
+  const allRoutes = [...staticRoutes, ...pageRoutes, ...postRoutes, ...tagRoutes];
+  const uniqueRoutes = Array.from(new Set(allRoutes.map(withTrailingSlash)));
 
   const entries = uniqueRoutes.map((route) => {
     const postSlug =
@@ -104,7 +95,7 @@ const main = () => {
     const decodedSlug = postSlug ? decodeURIComponent(postSlug) : null;
     const lastmod =
       decodedSlug && postLastmodMap.get(decodedSlug)
-        ? postLastmodMap.get(decodedSlug)
+        ? postLastmodMap.get(decodedSlug)!
         : now;
 
     return {
