@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://uos-zagaro-eng.github.io/zagaro-tech-blog/sitemap.xml
