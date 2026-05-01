@@ -1,2 +1,3 @@
-export const ROOT_URL = process.env.NEXT_PUBLIC_ROOT_URL as string;
-export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME as string;
+export const APP_BASE_PATH = '/zagaro-tech-blog' as const;
+export const ROOT_URL = `https://uos-zagaro-eng.github.io${APP_BASE_PATH}` as const;
+export const SITE_NAME = 'zagaro_eng' as const;
