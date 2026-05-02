@@ -32,6 +32,8 @@ yarn dev
 
 Main site settings are managed in `src/config/app.ts` (`APP_BASE_PATH`, `ROOT_URL`, `SITE_NAME`).
 
+For local markdown preview, markdown image paths like `![alt](../public/assets/...)` (or `![alt](./public/assets/...)`) are automatically converted to `/assets/...` at render time.
+
 ## Deployment
 
 Refer to this article for deployment instructions:
@@ -75,6 +77,8 @@ cd project-name
 yarn
 yarn dev
 ```
+
+Markdown 執筆時は `![alt](../public/assets/...)`（または `![alt](./public/assets/...)`）形式の画像パスが、表示時に `/assets/...` へ自動変換されます。
 
 ## デプロイ方法
 
