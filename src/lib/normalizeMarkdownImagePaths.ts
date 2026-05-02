@@ -12,11 +12,11 @@ const toPublicAssetPath = (rawPath: string) => {
   }
 
   if (/^public\//.test(normalized)) {
-    return `/${normalized.replace(/^public\/+/, '')}`;
+    return `../../${normalized.replace(/^public\/+/, '')}`;
   }
 
   if (/^(?:\.\.\/|\.\/)+public\//.test(normalized)) {
-    return `/${normalized.replace(/^(?:\.\.\/|\.\/)+public\/+/, '')}`;
+    return `../../${normalized.replace(/^(?:\.\.\/|\.\/)+public\/+/, '')}`;
   }
 
   return rawPath;
