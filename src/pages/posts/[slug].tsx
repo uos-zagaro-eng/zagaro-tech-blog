@@ -1,6 +1,7 @@
 import markdownToHtml from 'zenn-markdown-html';
 import { Posts } from '@/components/pages/posts';
 import { getPostBySlug, getAllPosts } from '@/lib/api';
+import { normalizeMarkdownImagePaths } from '@/lib/normalizeMarkdownImagePaths';
 
 type Props = React.ComponentPropsWithoutRef<typeof Posts>;
 
@@ -26,7 +27,8 @@ export async function getStaticProps({ params }: Params) {
     'excerpt',
     'tags',
   ]);
-  const content = await markdownToHtml(post.content || '', {
+  const normalizedMarkdown = normalizeMarkdownImagePaths(post.content || '');
+  const content = await markdownToHtml(normalizedMarkdown, {
     embedOrigin: 'https://embed.zenn.studio',
   });
 
